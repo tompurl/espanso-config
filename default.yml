@@ -1,0 +1,145 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+---
+
+enable_passive: true
+passive_key: CTRL
+
+matches:
+
+  - trigger: ":octo"
+    replace: "🐙"
+    word: true
+
+  - trigger: ":horns"
+    replace: "🤘🏼"
+    word: true
+
+  - trigger: ":rnr"
+    replace: "🎸🤘🏻🔥"
+    word: true
+
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  - trigger: "env"
+    replace: "environment"
+    word: true
+    propagate_case: true
+
+  # Dates
+  - triggers: [":date", "]d"]
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y%m%d"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+  - trigger: "ss"
+    replace: "🙂"
+    word: true
+
+  - trigger: "gm"
+    replace: "good morning"
+    word: true
+    propagate_case: true
+
+  - trigger: "th"
+    replace: "thanks"
+    word: true
+    propagate_case: true
+
+  - trigger: "ty"
+    replace: "thank you"
+    word: true
+    propagate_case: true
+
+  - trigger: "pn"
+    replace: "(630-788-8947)"
+
+  - trigger: ":pyscript"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args:
+            - "%CONFIG%/scripts/script.py"
+
+  - trigger: "yw"
+    replace: "you're welcome"
+    word: true
+    propagate_case: true
+
+  - trigger: "brb"
+    replace: "be right back."
+    word: true
+    propagate_case: true
+
+  - trigger: "pind"
+    replace: "ping"
+    word: true
+    propagate_case: true
+
+  - trigger: "guys"
+    replace: "folks"
+    word: true
+    propagate_case: true
+
+  - trigger: "wci"
+    replace: "what can I do for you"
+    word: true
+    propagate_case: true
+
+  - trigger: "hhh"
+    replace: "hey hey hey"
+    word: true
+    propagate_case: true
+
+  - trigger: "hht"
+    replace: "Hey hey Trey"
+    word: true
+    propagate_case: true
+
+  - trigger: "rf"
+    replace: "Robot Framework"
+    word: true
+    propagate_case: true
+
+  - trigger: "rmq"
+    replace: "RabbitMQ"
+    word: true
+    propagate_case: true
+
+  - trigger: "ms"
+    replace: "microservice"
+    word: true
+    propagate_case: true
+
+  - trigger: "mss"
+    replace: "microservices"
+    word: true
+    propagate_case: true
+
+  - trigger: "pbb"
+    replace: "prometheus-blackbox"
+    word: true
+    propagate_case: true
