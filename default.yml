@@ -53,7 +53,7 @@ matches:
         params:
           cmd: "echo Hello from your shell"
 
-  - trigger: "ss"
+  - trigger: ":ss"
     replace: "🙂"
     word: true
 
